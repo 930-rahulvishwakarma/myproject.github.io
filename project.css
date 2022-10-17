@@ -9,6 +9,7 @@ body{
     background: rgb(0, 0, 20);
     box-sizing: border-box;
     height: 100vh;
+    width: 100vw;
 }
 .cantainer{
     height: 200px;
@@ -18,16 +19,7 @@ body{
     position: relative;
     overflow: hidden;
     border-radius: 120px;
-    /* animation: one 3s alternate-reverse infinite; */
-
 }
-@keyframes one {
-    0%{
-        /* transform: translate(30px); */
-       rotate: -90deg;
-    }
-}
-
 .frist{
     display: grid;
     place-items: center;
@@ -52,8 +44,7 @@ body{
     background: red;
     box-shadow:0 0 10px red ;
     overflow: hidden;
-    z-index: 2;
-   
+    z-index: 2;   
 }
 
 .two::before{
@@ -64,13 +55,12 @@ body{
     width: 30px;
     height: 200px;
     background-color: lightseagreen;
-    animation: frist 5s linear infinite;   
+    animation: frist 5s alternate-reverse infinite;   
 
 }
 .three{
     width: 100px;
     height: 100px;
-    /* border: 4px solid yellow; */
     position: absolute; 
     top: 0;
     left: 0;
@@ -89,21 +79,12 @@ body{
     height: 200px;
     background-color: lightgreen;
     animation: frist 5s alternate infinite;   
-
 }
 .three::after,.two::after {
     content: "";
     position: absolute;
     background-color:red;
     inset: 5px;
-
-}
-@keyframes frist {
-    0%{
-        rotate: 360deg;
-        background-color: pink;
-    }
-    
 }
 .frist > p{
     color: white;
@@ -113,7 +94,6 @@ body{
     top: -10px;
     left: -10px;
     font-size: 2rem;
-
 }
 
 .cantainer::before{
@@ -126,7 +106,6 @@ body{
  background: green;
  overflow: hidden;
  animation: ghumo 4s linear infinite;
-  
 }
 .cantainer::after{
     content: "";
@@ -136,6 +115,18 @@ body{
 }
 @keyframes ghumo {
     0%{
-        rotate: 360deg;
+        rotate: 0deg;
     }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes frist {
+    0%{
+        rotate: 0deg;
+        background-color: pink;
+    }
+    100%{
+        rotate: 360deg;
+    }   
 }
